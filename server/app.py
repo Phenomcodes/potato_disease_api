@@ -42,7 +42,7 @@ async def predict(
     image = read_file_as_image(await file.read())
     image = valid_transform(image).unsqueeze(0)
     with torch.no_grad():
-        output = MODEL(image)
+        output = model(image)
         _, predicted = torch.max(output, 1)
         probs = torch.softmax(output, 1)
         confidence = probs[0][predicted[0]].item()
@@ -50,3 +50,4 @@ async def predict(
 
     #print("Predicted class:", classes[predicted.item()])
     #print("Confidence level:", int(100 * confidence))
+
