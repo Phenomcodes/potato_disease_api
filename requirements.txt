@@ -1,0 +1,9 @@
+python == 3.11.14
+uvicorn
+torch
+torchvision
+fastapi
+pillow
+python-multipart
+gdown
+
