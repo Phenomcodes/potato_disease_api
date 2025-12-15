@@ -5,7 +5,7 @@ import torch
 import io
 import os
 import gdown
-from  cnn import model
+from .cnn import model
 
 app = FastAPI()
 
@@ -50,4 +50,5 @@ async def predict(
 
     #print("Predicted class:", classes[predicted.item()])
     #print("Confidence level:", int(100 * confidence))
+
 
